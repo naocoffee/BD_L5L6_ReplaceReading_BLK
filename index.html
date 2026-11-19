@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>置換リーディング練習</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+  <header>
+    <h1 id="title">置換リーディング練習</h1>
+    <p id="progress"></p>
+  </header>
+
+  <main>
+    <!-- 最初の画面 -->
+    <section id="setup">
+      <p class="label">解答形式</p>
+      <div class="actions" id="modeChoices">
+        <button class="chunk selected" data-mode="write">記述（入力）</button>
+        <button class="chunk" data-mode="select">選択（4択）</button>
+      </div>
+
+      <p class="label">Lesson</p>
+      <div class="actions" id="lessonChoices"></div>
+
+      <p class="label">Part</p>
+      <div class="actions" id="partChoices"></div>
+      <p class="sub" id="rangeInfo"></p>
+
+      <div class="actions start">
+        <button class="primary" id="startBtn">スタート</button>
+      </div>
+    </section>
+
+    <!-- 練習画面 -->
+    <section id="practice" class="hidden">
+      <p class="source" id="practiceTitle"></p>
+      <p class="instruction" id="instruction"></p>
+
+      <div id="passage" class="passage"></div>
+
+      <!-- 記述モード -->
+      <div class="actions" id="writeControls">
+        <button id="backBtn">最初の画面にもどる</button>
+        <button id="showAnsBtn">答えを見る</button>
+        <button class="primary" id="checkBtn">答え合わせ</button>
+      </div>
+
+      <!-- 選択モード -->
+      <div id="selectPanel" class="select-panel hidden">
+        <p class="select-hint" id="selectHint"></p>
+        <div class="pool" id="selectOptions"></div>
+        <p class="mark" id="selectFeedback"></p>
+      </div>
+
+      <div id="result" class="feedback hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
